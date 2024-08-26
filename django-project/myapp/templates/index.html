@@ -17,6 +17,9 @@
     </style>
 </head>
 <body>
-    <h1>Hello Django</h1>
+    {% extends "header.html" %}
+    {% block content %}
+        <h1>Hello Django</h1>
+    {% endblock %}
 </body>
 </html>

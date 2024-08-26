@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Tasks</title>
+<body>
+    {% extends "header.html" %}
+
+    {% block content %}
+    {%for task in tasks%}
+        <div>
+            <p>{{task.title}}</p>
+            {% if task.done%}
+                <p style="color:green;"><b>Task Done</b></p>
+            {% else %}
+                <p style="color:red;"><b>Task In Progress</b></p>
+            {% endif %}
+            <p>{{task.description}}</p>
+            <p>Project: {{ task.project.name }}</p>
+            <Button>Delete</Button>
+            <Button>Done</Button>
+        </div>
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>
